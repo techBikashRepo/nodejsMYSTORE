@@ -1,3 +1,5 @@
+const Products = require("../models/products");
+
 const products = [
   { id: 1, productname: "Apple", price: 20, img: "apple.jpg" },
   { id: 2, productname: "Banana", price: 30, img: "banana.jpg" },
@@ -6,6 +8,9 @@ const products = [
   { id: 5, productname: "Strawberry", price: 25, img: "strawberry.jpg" },
 ];
 exports.renderProducts = (req, res) => {
+  Products.fetchProducts().then(([rows, fieldData]) => {
+    console.log(rows);
+  });
   res.render("home", { products: products });
 };
 
