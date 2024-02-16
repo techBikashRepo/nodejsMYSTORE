@@ -2,6 +2,8 @@ const express = require("express");
 const chalk = require("chalk");
 const home = require("./routes/home");
 const addProduct = require("./routes/addProduct");
+const editProduct = require("./routes/editProduct");
+
 const app = express();
 const PORT = 3000;
 
@@ -10,6 +12,7 @@ app.set("views", "views");
 
 app.use("/", home);
 app.use("/add-product", addProduct);
+app.use("/edit-product", editProduct);
 app.use(express.static(__dirname));
 
 const server = app.listen(PORT, () => {

@@ -12,3 +12,7 @@ exports.renderProducts = (req, res) => {
 exports.renderAddProduct = (req, res) => {
   res.render("add-product");
 };
+
+exports.renderEditProduct = (req, res) => {
+  res.render("edit-product", { product: products[--req.params.id] });
+};
