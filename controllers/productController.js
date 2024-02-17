@@ -41,3 +41,10 @@ exports.editProduct = (req, res) => {
     res.redirect("/");
   });
 };
+
+exports.deleteProduct = (req, res) => {
+  const id = req.params.id;
+  Products.deleteProductById(id).then(() => {
+    res.redirect("/");
+  });
+};
